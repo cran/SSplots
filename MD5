@@ -1,0 +1,8 @@
+810bdd1eecb293291d8f9ed14767fab7 *DESCRIPTION
+bc9a814b77c97f5dac2698fe398acd32 *NAMESPACE
+84abf6fd24f93a45f97a5790d6803a08 *R/SSplots_kleisner.R
+39541bd56e6be80d5920346384e040c8 *R/SSplots_pauly.R
+a04672b80a4d728ed5e2953e658f452b *data/SampleData.rda
+48b2f8336d8e1fc2e1966e4b970203f8 *man/SSplots_kleisner.Rd
+56db63a9a8af28e712f9d038bc228ad9 *man/SSplots_pauly.Rd
+ebe221567d8a8f445f024fd3e320d130 *man/SampleData.Rd
