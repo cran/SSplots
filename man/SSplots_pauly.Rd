@@ -11,26 +11,20 @@ SSplots_pauly(data,lower.lt,upper.lt, tsplots)
 \item{tsplots}{time series plot}
 }
 \description{
-This function provides plots to see the typical transition from undeveloped through fully exploited, to collapsed for each resources.
+This function provides plots to see the typical transition from undeveloped through fully exploited, to collapsed for each resources as per the criteria used by Pauly et al (2008) to interpret the status of fishery resource
 }
 \value{
 This function returns two plots one with "number of stocks by status" and the other one is "catch by stock status" apart from the time seriers plots.
 }
 \details{
- Table1. Criteria used by Pauly et al (2008) to interpret the status of fishery resource
------------------------------------------------------------------------------------------------------------------
-\tabular{lcc}{
-Status of fishery   \tab |\tab  Criterion Applied
-\cr-------------------------------------------\tab|\tab--------------------------------------------------------------------------------------------\cr
+**Status of fishery** \verb{            }  **Criterion Applied**\cr\cr
 
-Undeveloped \tab|\tab  Year< max landings AND landings < 10 percent of max value \cr
-Developing \tab|\tab  Year < max landings AND landings is between 10-50 percent of max value \cr
-Fully exploited \tab|\tab  Landings > 50 percent of max value \cr
-Overexploited \tab|\tab Year > max landings AND landings is between 10-50 percent of max value\cr
-Collapsed \tab|\tab Year > max landings AND landings< 10 percent of max value\cr
+Undeveloped: \verb{  }  Year< max landings AND landings < 10 percent of max value \cr\cr
+Developing:\verb{  }  Year < max landings AND landings is between 10-50 percent of max value \cr\cr
+Fully exploited:\verb{  }  Landings > 50 percent of max value \cr\cr
+Overexploited:\verb{  } Year > max landings AND landings is between 10-50 percent of max value\cr\cr
+Collapsed:\verb{  } Year > max landings AND landings< 10 percent of max value\cr\cr
  }
-}
-
 \examples{
 library (SSplots)
 data(SampleData)

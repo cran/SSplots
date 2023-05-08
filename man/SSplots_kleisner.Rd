@@ -11,23 +11,24 @@ SSplots_kleisner(data,lower.lt,upper.lt, tsplots, MA)
 \item{tsplots}{time series plot}
 \item{MA}{moving average}}
 \description{
-This function provides stock status plots to see the typical transition from rebuilding through overexploited to collapsed for each resources.
+This function provides stock status plots to see the typical transition from rebuilding through overexploited to collapsed for each resources as per the criteria used by (Kleisner and Pauly (2011) and Kleisner et al. (2013)
+to interpret the status of fishery resource.
 }
 \value{
 This function returns two plots one with "number of stocks by status" and the other one is "catch by stock status" apart from the time seriers plots.
 }
 \details{
-Table 2. Criteria used by (Kleisner and Pauly (2011) and Kleisner et al. (2013) to interpret the status of fishery resource.
------------------------------------------------------------------------------------------------------------------------------------------------------------------
-\tabular{lcc}{
-Status of fishery  \tab |\tab  Criterion Applied
-\cr-----------------------------\tab|\tab--------------------------------------------------------------------------------------------\cr
-Rebuilding(Recovering)\tab|\tab  Year of landings > year of post-max-min landings AND post-max-min landings < 10  percent of max landings AND landings is between 10-50 percent of max landings \cr
-Developing\tab|\tab  Year of landings < year of max landings AND landings <= 50 percent of max landings OR year of max landings= final year of landings \cr
-Exploited\tab|\tab  Landings > 50 percent of max landings \cr
-Overexploited\tab|\tab Year of landings > year of max landings AND landings is between 10-50 percent of max landings\cr
-Collapsed\tab|\tab Year of landings > year of max landings AND landings< 10 percent of max landings\cr
- }
+**Status of fishery** \verb{                    } **Criterion Applied**\cr\cr
+Rebuilding(Recovering): \verb{ }Year of landings > year of post-max-min landings AND
+post-max-min landings < 10  percent of max landings AND landings
+is between 10-50 percent of max landings \cr\cr
+Developing: \verb{ } Year of landings < year of max landings AND landings <= 50
+percent of max landings OR year of max landings= final year of landings \cr\cr
+Exploited: \verb{ } Landings > 50 percent of max landings \cr\cr
+Overexploited:\verb{ } Year of landings > year of max landings AND landings is
+between 10-50 percent of max landings\cr\cr
+Collapsed:\verb{ } Year of landings > year of max landings AND landings< 10
+percent of max landings\cr\cr
 }
 \examples{
 library (SSplots)
