@@ -2,13 +2,14 @@
 \alias{SSplots_pauly}
 \title{Stock-Catch-Status Plot or Catch by Stock Status Graph (Pauly et al., 2008)}
 \usage{
-SSplots_pauly(data,lower.lt,upper.lt, tsplots)
+SSplots_pauly(data,lower.lt,upper.lt, tsplots,MA)
 }
 \arguments{
 \item{data}{dataset}
 \item{lower.lt}{lower limit}
 \item{upper.lt}{upper limit}
 \item{tsplots}{time series plot}
+\item{MA}{moving average}
 }
 \description{
 This function provides plots to see the typical transition from undeveloped through fully exploited, to collapsed for each resources as per the criteria used by Pauly et al (2008) to interpret the status of fishery resource
@@ -28,7 +29,7 @@ Collapsed:\verb{  } Year > max landings AND landings< 10 percent of max value\cr
 \examples{
 library (SSplots)
 data(SampleData)
-SSplots_pauly(data=SampleData,lower.lt=10,upper.lt=50, tsplots=FALSE)
+SSplots_pauly(data=SampleData,lower.lt=10,upper.lt=50, tsplots=FALSE,MA=FALSE)
 }
 \note{Note: tsplots=TRUE for generating the time series plots for each resources. In that case it is advisable to set a working directory and the number of time series plots generated will be equal to the number of resources.}
 

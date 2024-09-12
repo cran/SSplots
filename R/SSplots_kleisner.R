@@ -1,19 +1,12 @@
-
-# @importFrom zoo rollmean
-# @importFrom ggplot2 ggplot aes geom_area ggtitle  xlab ylab labs theme ggsave geom_hline scale_fill_brewer
-# @importFrom reshape2 melt
-#' @export
-SSplots_kleisner<- function (data,lower.lt,upper.lt, tsplots,MA)
+#'@export
+SSplots_kleisner<- function (data,lower.lt=10,upper.lt=50, tsplots=FALSE,MA=FALSE)
 {
-  data0<-as.data.frame(data)
-  if (MA==TRUE)
-  {
-    data1<-as.data.frame(zoo::rollmean(data0,k=3))
+  if (MA==TRUE){
+    data1<-data.frame(zoo::rollmean(data,k=3))
+  }else{
+    data1<-data.frame(data)
   }
-  else
-  {
-    data1<-as.data.frame(data0)
-  }
+  data1<-as.data.frame(data1)
   data2<-data1[,-1]
   Year<-data1[,1]
   lw<-0
@@ -51,7 +44,7 @@ SSplots_kleisner<- function (data,lower.lt,upper.lt, tsplots,MA)
         if (data1[m,1]>data1[which(grepl(max(data1[,k+1]),data1[,k+1])),1])
         {
           Post.max.min[k] = min(data1[m:nrow(data1),k+1])
-          Post.max.min.Yr[k] = data1[which(data1[,k+1]==min(data1[m:nrow(data1),k+1])),1]
+          Post.max.min.Yr[k] = data1[which(data1[,k+1]==min(data1[m:nrow(data1),k+1])),1][1]
           k=k+1
 
         }
@@ -97,20 +90,20 @@ SSplots_kleisner<- function (data,lower.lt,upper.lt, tsplots,MA)
 
 
   }
-  mat1<-as.data.frame(mat[ ,-1 ])
-  mat11<-as.data.frame(mat[ ,1])
+  mat1<-data.frame(mat[ ,-1 ])
+  mat11<-data.frame(mat[ ,1])
   colnames(mat11)<-"Year"
   Rebuilding<-rowSums(mat1==1)
   Developing<-rowSums(mat1==2)
   Exploited<-rowSums(mat1==3)
   Overexploited<-rowSums(mat1==4)
   Collapsed<-rowSums(mat1==5)
-  mat2<-as.data.frame(cbind(Rebuilding,Developing,Exploited,Overexploited,Collapsed))
+  mat2<-data.frame(cbind(Rebuilding,Developing,Exploited,Overexploited,Collapsed))
   mat21<-(mat2/rowSums(mat2))*100
-  mat4<-utils::stack(as.data.frame(mat21))
-  Year1<-utils::stack(as.data.frame(rep(mat11,5)))
+  mat4<-utils::stack(data.frame(mat21))
+  Year1<-utils::stack(data.frame(rep(mat11,5)))
   Year<-as.numeric(Year1$values)
-  Pecentage_Count<-as.data.frame(cbind(Year,mat4))
+  Pecentage_Count<-data.frame(cbind(Year,mat4))
   colnames(Pecentage_Count)<-c("Year","Count","Status")
   Pecentage_Count[order(Pecentage_Count$Year, decreasing = F), ]
 
@@ -128,7 +121,7 @@ SSplots_kleisner<- function (data,lower.lt,upper.lt, tsplots,MA)
 
   #dev.off()
 
-  mat0<-as.data.frame(mat)
+  mat0<-data.frame(mat)
   nn<-colnames(mat0)
   rr<-ncol(mat0)
   tt3<-reshape2::melt(mat0,id.vars=nn[1],measure.vars=nn[c(2:rr)])
@@ -144,10 +137,10 @@ SSplots_kleisner<- function (data,lower.lt,upper.lt, tsplots,MA)
   tt7[is.na(tt7)]<-0
   mat2_c<-tt7[,-1]
   mat21_c<-(mat2_c/rowSums(mat2_c))*100
-  mat4_c<-utils::stack(as.data.frame(mat21_c))
-  Year1<-utils::stack(as.data.frame(rep(mat11,5)))
+  mat4_c<-utils::stack(data.frame(mat21_c))
+  Year1<-utils::stack(data.frame(rep(mat11,5)))
   Year<-as.numeric(Year1$values)
-  Pecentage_Catch<-as.data.frame(cbind(Year,mat4_c))
+  Pecentage_Catch<-data.frame(cbind(Year,mat4_c))
   colnames(Pecentage_Catch)<-c("Year","Catch","Status")
   Pecentage_Catch[order(Pecentage_Catch$Year, decreasing = F), ]
   Catch=Pecentage_Catch$Catch

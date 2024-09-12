@@ -1,8 +1,10 @@
-38589c68486d9afd89f2ef9889c0d45f *DESCRIPTION
-bc9a814b77c97f5dac2698fe398acd32 *NAMESPACE
-84abf6fd24f93a45f97a5790d6803a08 *R/SSplots_kleisner.R
-39541bd56e6be80d5920346384e040c8 *R/SSplots_pauly.R
+e226b4e91912252a034f9f8e7b61a014 *DESCRIPTION
+c2131e7d48fcdc4c1f36eebc401545b6 *NAMESPACE
+14cfb26c28beaaa4d69b578d17f1b0ec *R/SSplots_EPI.R
+186246bb604f6a12d6c9951f003d11be *R/SSplots_kleisner.R
+d48783f7cd20c49b3bdbec374a143dcd *R/SSplots_pauly.R
 a04672b80a4d728ed5e2953e658f452b *data/SampleData.rda
+5439428d41e46bd3fd7c8a6dc086aeaf *man/SSplots_EPI.Rd
 66372c81e2b727eeeb26ae3e9fb37b7d *man/SSplots_kleisner.Rd
-cfd43320929f710a06bfc2deb2b39da5 *man/SSplots_pauly.Rd
+c1650e76e2a352ec8f06b5b52511daab *man/SSplots_pauly.Rd
 ebe221567d8a8f445f024fd3e320d130 *man/SampleData.Rd
